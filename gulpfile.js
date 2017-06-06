@@ -7,8 +7,6 @@
 const gulp = require('gulp'),
       changed = require('gulp-changed'),
       pug = require('gulp-pug'),
-      //typograf = require('gulp-typograf'),
-      //w3cjs = require('gulp-w3cjs'),
       sass = require('gulp-sass'),
       browserSync = require('browser-sync').create(),
       concat = require('gulp-concat'),
@@ -27,7 +25,7 @@ gulp.task('pug', function buildHTML() {
     .pipe(changed('./app', {extension: '.html'}))
     .pipe(pug({pretty: true}))
     .pipe(gulp.dest('./app'))
-    .pipe(browserSync.stream({match: "**/*.html"}));
+    .pipe(browserSync.stream());
 });
 
 // Sass + autoprefixer
@@ -37,7 +35,7 @@ gulp.task('sass', function() {
     .pipe(sass())
     .pipe(autoprefixer(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], { cascade: true }))
     .pipe(gulp.dest('./app/css'))
-    .pipe(browserSync.stream({match: "**/*.css"}));
+    .pipe(browserSync.stream());
 });
 
 // Browser-sync
@@ -53,7 +51,7 @@ gulp.task('browser-sync', function() {
 // Libs.min.js
 gulp.task('scripts', function() {
   return gulp.src([
-    './app/libs/jquery/dist/jquery.min.js'
+    //'./app/libs/jquery/dist/jquery.min.js'
   ])
     .pipe(concat('libs.min.js'))
     .pipe(uglify())
@@ -72,7 +70,7 @@ gulp.task('css-libs', ['sass'], function() {
 gulp.task('watch', ['browser-sync', 'pug', 'css-libs', 'scripts'], function() {
   gulp.watch('./app/pug/**/*.pug', ['pug']);
   gulp.watch('./app/sass/**/*.sass', ['sass']);
-  gulp.watch('./app/*.html').on('change', browserSync.reload);
+  //gulp.watch('./app/*.html').on('change', browserSync.reload);
   gulp.watch('./app/js/**/*.js', browserSync.reload);
 });
 

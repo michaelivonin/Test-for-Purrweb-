@@ -1,0 +1,11 @@
+{
+  "name": "project-template",
+  "description": "First serious project",
+  "main": "index.js",
+  "authors": [
+    "Mike Ivonin <Michael@drummer.ru>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/Michael-Ivonin/Project-template",
+  "private": true
+}
