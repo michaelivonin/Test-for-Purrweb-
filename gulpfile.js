@@ -74,10 +74,10 @@ gulp.task('watch', ['browser-sync', 'pug', 'css-libs', 'scripts'], function() {
 
 // svgSprite
 gulp.task('svg', function() {
-  return gulp.src('./app/img/svg/*.svg')
+  return gulp.src('./app/images/svg/*.svg')
     .pipe(svgSprite({
       svg: {
-        sprite: '../img/svg-sprite.svg'
+        sprite: '../images/svg-sprite.svg'
       },
       preview: {
         sprite: 'svg-sprite.html'
@@ -87,7 +87,7 @@ gulp.task('svg', function() {
       pngPath: '%f',
       padding: 2
     }))
-    .pipe(gulp.dest('./app/img'));
+    .pipe(gulp.dest('./app/images'));
 });
 
 // Clean dist
@@ -97,14 +97,14 @@ gulp.task('clean', function() {
 
 // Img min
 gulp.task('img', function() {
-  return gulp.src('./app/img/*.+(jpg|png|svg)')
+  return gulp.src('./app/images/*.+(jpg|png|svg)')
     /*.pipe(cache(imagemin({
       interlaced: true,
       progressive: true,
       svgoPlugins: [{removeViewBox: false}],
       use: [pngquant()]
     })))*/
-    .pipe(gulp.dest('./dist/img'));
+    .pipe(gulp.dest('./dist/images'));
 });
 
 // Build
