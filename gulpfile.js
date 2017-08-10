@@ -5,7 +5,6 @@
 'use strict';
 
 const gulp = require('gulp'),
-      changed = require('gulp-changed'),
       pug = require('gulp-pug'),
       sass = require('gulp-sass'),
       browserSync = require('browser-sync').create(),
@@ -13,6 +12,7 @@ const gulp = require('gulp'),
       uglify = require('gulp-uglifyjs'),
       cssnano = require('gulp-cssnano'),
       rename = require('gulp-rename'),
+      svgSprite = require('gulp-svg-sprites'),
       del = require('del'),
       imagemin = require('gulp-imagemin'),
       pngquant = require('imagemin-pngquant'),
@@ -22,8 +22,7 @@ const gulp = require('gulp'),
 // Pug
 gulp.task('pug', function buildHTML() {
   return gulp.src('./app/pug/**/*.pug')
-    .pipe(changed('./app', {extension: '.html'}))
-    .pipe(pug({pretty: true}))
+    .pipe(pug())
     .pipe(gulp.dest('./app'))
     .pipe(browserSync.stream());
 });
@@ -31,9 +30,8 @@ gulp.task('pug', function buildHTML() {
 // Sass + autoprefixer
 gulp.task('sass', function() {
   return gulp.src('./app/sass/**/*.sass')
-    .pipe(changed('./app/css', {extension: '.css'}))
     .pipe(sass())
-    .pipe(autoprefixer(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], { cascade: true }))
+    .pipe(autoprefixer(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], {cascade: true}))
     .pipe(gulp.dest('./app/css'))
     .pipe(browserSync.stream());
 });
@@ -51,7 +49,8 @@ gulp.task('browser-sync', function() {
 // Libs.min.js
 gulp.task('scripts', function() {
   return gulp.src([
-    //'./app/libs/jquery/dist/jquery.min.js'
+    //'./app/libs/jquery/dist/jquery.min.js',
+    //'./app/libs/bootstrap/dist/js/bootstrap.min.js'
   ])
     .pipe(concat('libs.min.js'))
     .pipe(uglify())
@@ -70,8 +69,25 @@ gulp.task('css-libs', ['sass'], function() {
 gulp.task('watch', ['browser-sync', 'pug', 'css-libs', 'scripts'], function() {
   gulp.watch('./app/pug/**/*.pug', ['pug']);
   gulp.watch('./app/sass/**/*.sass', ['sass']);
-  //gulp.watch('./app/*.html').on('change', browserSync.reload);
   gulp.watch('./app/js/**/*.js', browserSync.reload);
+});
+
+// svgSprite
+gulp.task('svg', function() {
+  return gulp.src('./app/img/svg/*.svg')
+    .pipe(svgSprite({
+      svg: {
+        sprite: '../img/svg-sprite.svg'
+      },
+      preview: {
+        sprite: 'svg-sprite.html'
+      },
+      cssFile: '../css/_svg-sprite.css',
+      svgPath: '%f',
+      pngPath: '%f',
+      padding: 2
+    }))
+    .pipe(gulp.dest('./app/img'));
 });
 
 // Clean dist
@@ -81,13 +97,13 @@ gulp.task('clean', function() {
 
 // Img min
 gulp.task('img', function() {
-  return gulp.src('./app/img/**/*')
-    .pipe(cache(imagemin({
+  return gulp.src('./app/img/*.+(jpg|png|svg)')
+    /*.pipe(cache(imagemin({
       interlaced: true,
       progressive: true,
       svgoPlugins: [{removeViewBox: false}],
       use: [pngquant()]
-    })))
+    })))*/
     .pipe(gulp.dest('./dist/img'));
 });
 
@@ -107,6 +123,9 @@ gulp.task('build', ['clean', 'img', 'sass', 'scripts'], function() {
 
   var buildHtml = gulp.src('./app/*.html')
   .pipe(gulp.dest('./dist'));
+
+  var favicon = gulp.src('./app/favicon.ico')
+    .pipe(gulp.dest('./dist'));
 });
 
 // Clear cache
