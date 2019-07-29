@@ -9,10 +9,10 @@ const gulp = require('gulp'),
   imagemin = require('gulp-imagemin'),
   pngquant = require('imagemin-pngquant'),
   spritesmith = require("gulp.spritesmith"),
-  svgstore = require('gulp-svgstore'),
+  /*svgstore = require('gulp-svgstore'),
   svgmin = require('gulp-svgmin'),
   inject = require('gulp-inject'),
-  rename = require('gulp-rename'),
+  rename = require('gulp-rename'),*/
   plumber = require('gulp-plumber'),
   notify = require("gulp-notify"),
   browserSync = require('browser-sync').create();
@@ -123,9 +123,8 @@ gulp.task('png-sprite', (done) => {
 });
 
 // SVG Sprites
-gulp.task('svg-sprite', (done) => {
-  let svgs = gulp
-    .src(path.src.svgSprite)
+/*gulp.task('svg-sprite', () => {
+  let svgs = gulp.src(path.src.svgSprite)
     .pipe(rename({prefix: 'svg-icon-'}))
     .pipe(svgmin())
     .pipe(svgstore({ inlineSvg: true }));
@@ -134,19 +133,18 @@ gulp.task('svg-sprite', (done) => {
     return file.contents.toString();
   }
 
-  gulp.src('src/pug/svg.pug')
+  return gulp.src('src/pug/svg.pug')
     .pipe(inject(svgs, { transform: fileContents }))
     .pipe(gulp.dest('src/pug'));
-  done();
-});
+});*/
 
 gulp.task('build', gulp.series(
   'html:build',
   'style:build',
   'fonts:build',
   'image:build',
-  'png-sprite',
-  'svg-sprite'
+  'png-sprite'
+  /*'svg-sprite'*/
 ));
 
 gulp.task('watch', (done) => {
@@ -154,7 +152,7 @@ gulp.task('watch', (done) => {
   gulp.watch(path.watch.style, gulp.series('style:build'));
   gulp.watch(path.watch.img, gulp.series('image:build'));
   gulp.watch(path.watch.pngSprite, gulp.series('png-sprite'));
-  gulp.watch(path.watch.svgSprite, gulp.series('svg-sprite'));
+  //gulp.watch(path.watch.svgSprite, gulp.series('svg-sprite'));
   gulp.watch(path.watch.fonts, gulp.series('fonts:build'));
   done();
 });

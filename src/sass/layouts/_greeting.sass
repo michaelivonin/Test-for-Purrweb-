@@ -2,21 +2,36 @@
   height: 100vh
   background: url(../../images/greeting-bg.jpg) no-repeat
   background-size: cover
+  //display: flex
+  //flex-direction: column
+  //justify-content: space-between
+  //text-align: center
 
 .header
   padding: 27px 66px 0
+  display: flex
+  flex-direction: row
+  justify-content: flex-end
 
   &__button-menu
-    float: right
+    //float: right
+
+.greeting__container
+  height: calc(100% - 53px)
+  display: flex
+  flex-direction: column
+  justify-content: flex-end
+  align-items: center
 
 .button-menu
-  @extend %btn-default
+  @include button-default
   width: 85px
   display: flex
   justify-content: space-between
   align-items: center
 
   &__text
+    @include text-default
     text-transform: uppercase
 
   &__bars
@@ -30,3 +45,77 @@
     height: 6px
     background-color: #e22028
     border-radius: 3px
+
+.title
+  text-align: center
+
+  &__logo
+    display: inline-block
+    width: 442px
+    height: 277px
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.25)
+    margin-bottom: 91px
+
+  &__main-heading
+    @include text-default
+    color: #2f1946
+    font-size: 80px
+    text-transform: uppercase
+    letter-spacing: 1.67px
+    text-shadow: 0 0 3px rgba(0, 0, 0, 0.25)
+    line-height: 59px
+    margin-bottom: 72px
+
+  //&__button-go-down
+
+.button-go-down
+  @include button-default
+  width: 190px
+  height: 72px
+  border: 1px solid #81398b
+  border-radius: 36px
+
+  &__text
+    @include text-default
+    display: inline-flex
+    flex-direction: column
+    justify-content: center
+    width: 163px
+    height: 50px
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.25)
+    border-radius: 25px
+    background-color: #81398b
+    font-size: 18px
+    color: #ffffff
+    text-transform: capitalize
+
+.cards
+  width: 785px
+  display: inline-flex
+  flex-direction: row
+  justify-content: space-between
+  position: relative
+  bottom: -110px
+
+  &__item
+    width: 235px
+    height: 330px
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.25)
+    display: flex
+    flex-direction: column
+    justify-content: flex-end
+
+  &__item-pink
+    background-color: #fe4a5d
+
+  &__item-red
+    background-color: #e22028
+
+  &__item-orange
+    background-color: #ff6c00
+
+  &__title
+    width: 235px
+    height: 110px
+    background-color: #000000
+    opacity: 0.1

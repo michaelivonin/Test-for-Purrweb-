@@ -1,20 +1,21 @@
 // Base
 @import "../../node_modules/reset-css/sass/_reset"
 
-// Helpers
-@import 'helpers/mixins/_icon-helper'
-//@import 'helpers/mixins/row-zero-heading'
+*
+  box-sizing: border-box
 
-
-// Layouts
-@import 'layouts/_greeting'
-
-%btn-default
-  background: none
-  border: none
-  outline: none
-  padding: 0
+.icon
+  display: inline-block
+  vertical-align: middle
 
 .container
   max-width: 1270px
   margin: auto
+
+// Helpers
+@import 'helpers/mixins/_text-default'
+@import 'helpers/mixins/_button-default'
+@import 'helpers/mixins/_icon-helper'
+
+// Layouts
+@import 'layouts/_greeting'

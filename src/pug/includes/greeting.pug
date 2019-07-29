@@ -8,37 +8,37 @@
         span.button-menu__bar
     // /.header__button-menu.button-menu
   // /.header
-  .container
+  .container.greeting__container
     .title
       a.title__logo(href='#' title='url.com')
-        +svg('logo').title__icon-logo
+        //+svg('logo').title__icon-logo
       // /.title__logo
       h1.title__main-heading
         | Find someone to click with
       // /.title__main-heading
+      button.title__button-go-down.button-go-down(type='button' title='Get Started')
+        span.button-go-down__text Get started
+      // /.title__button-go-down.button-go-down
     // /.title
-    button.button-go-down(type='button' title='Get Started')
-      | Get started
-    // /.button-go-down
     .cards
-      .cards__item
-        +svg('world').cards__icon-world
+      .cards__item.cards__item-pink
+        //+svg('world').cards__icon-world
         p.cards__title
           | One world
         // /.cards__title
       // /.cards__item
-      .cards__item
-        +svg('hearts').cards__icon-hearts
+      .cards__item.cards__item-red
+        //+svg('hearts').cards__icon-hearts
         p.cards__title
           | Two hearts
         // /.cards__title
       // /.cards__item
-      .cards__item
-        +svg('net').cards__icon-net
+      .cards__item.cards__item-orange
+        //+svg('net').cards__icon-net
         p.cards__title
           | One site
         // /.cards__title
       // /.cards__item
     // /.cards
-  // /.container
+  // /.container.greeting__container
 // /.greeting
