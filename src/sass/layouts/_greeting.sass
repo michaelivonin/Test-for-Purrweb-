@@ -2,10 +2,6 @@
   height: 100vh
   background: url(../../images/greeting-bg.jpg) no-repeat
   background-size: cover
-  //display: flex
-  //flex-direction: column
-  //justify-content: space-between
-  //text-align: center
 
 .header
   padding: 27px 66px 0
@@ -13,15 +9,12 @@
   flex-direction: row
   justify-content: flex-end
 
-  &__button-menu
-    //float: right
-
 .greeting__container
   height: calc(100% - 53px)
   display: flex
   flex-direction: column
-  justify-content: flex-end
   align-items: center
+  position: relative
 
 .button-menu
   @include button-default
@@ -48,12 +41,11 @@
 
 .title
   text-align: center
+  position: absolute
+  bottom: 30%
 
   &__logo
     display: inline-block
-    width: 442px
-    height: 277px
-    box-shadow: 0 0 3px rgba(0, 0, 0, 0.25)
     margin-bottom: 91px
 
   &__main-heading
@@ -66,8 +58,6 @@
     line-height: 59px
     margin-bottom: 72px
 
-  //&__button-go-down
-
 .button-go-down
   @include button-default
   width: 190px
@@ -78,8 +68,9 @@
   &__text
     @include text-default
     display: inline-flex
-    flex-direction: column
+    flex-direction: row
     justify-content: center
+    align-items: center
     width: 163px
     height: 50px
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.25)
@@ -89,12 +80,15 @@
     color: #ffffff
     text-transform: capitalize
 
+  &__icon-arrow-down
+    margin-left: 12px
+
 .cards
   width: 785px
   display: inline-flex
   flex-direction: row
   justify-content: space-between
-  position: relative
+  position: absolute
   bottom: -110px
 
   &__item
@@ -103,19 +97,34 @@
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.25)
     display: flex
     flex-direction: column
-    justify-content: flex-end
+    align-items: center
+    position: relative
 
-  &__item-pink
+  &__item_pink
     background-color: #fe4a5d
 
-  &__item-red
+  &__item_red
     background-color: #e22028
 
-  &__item-orange
+  &__item_orange
     background-color: #ff6c00
+
+  &__icon-world
+    position: absolute
+    top: calc(50% - 96px)
+
+  &__icon-hearts
+    position: absolute
+    top: calc(50% - 96px)
+
+  &__icon-net
+    position: absolute
+    top: calc(50% - 91px)
 
   &__title
     width: 235px
     height: 110px
     background-color: #000000
     opacity: 0.1
+    position: absolute
+    bottom: 0

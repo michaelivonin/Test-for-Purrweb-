@@ -106,14 +106,14 @@ gulp.task('png-sprite', (done) => {
   let spriteData =
     gulp.src(path.src.pngSprite + '*.png')
       .pipe(spritesmith({
-        retinaSrcFilter: path.src.pngSprite + '*-2x.png',
+        retinaSrcFilter: path.src.pngSprite + '*@2x.png',
         imgName: 'sprite.png',
-        retinaImgName: 'sprite-2x.png',
+        retinaImgName: 'sprite@2x.png',
         cssName: '_png-sprite.sass',
         cssTemplate: 'sass.template.mustache',
         cssVarMap: (sprite) => {
           sprite.name = sprite.name;
-          sprite.image2x = 'sprite-2x.png';
+          sprite.image2x = 'sprite@2x.png';
         }
       }));
 
