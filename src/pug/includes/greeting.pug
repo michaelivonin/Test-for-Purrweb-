@@ -9,10 +9,11 @@
     // /.header__button-menu.button-menu
   // /.header
   .container.greeting__container
+    a.logo(href='#' title='url.com')
+      .icon.icon-logo.icon-logo
+    // /.title__logo
     .title
-      a.title__logo(href='#' title='url.com')
-        .icon.icon-logo.title__icon-logo
-      // /.title__logo
+
       h1.title__main-heading
         | Find someone to click with
       // /.title__main-heading
@@ -26,20 +27,20 @@
     .cards
       .cards__item.cards__item_pink
         .icon.icon-world.cards__icon-world
-        p.cards__title
-          | One world
+        .cards__title.cards__title_pink
+          p.cards__text One world
         // /.cards__title
       // /.cards__item
       .cards__item.cards__item_red
         .icon.icon-hearts.cards__icon-hearts
-        p.cards__title
-          | Two hearts
+        .cards__title.cards__title_red
+          p.cards__text Two hearts
         // /.cards__title
       // /.cards__item
       .cards__item.cards__item_orange
         .icon.icon-net.cards__icon-net
-        p.cards__title
-          | One site
+        .cards__title.cards__title_orange
+          p.cards__text One site
         // /.cards__title
       // /.cards__item
     // /.cards
