@@ -34,17 +34,15 @@
 
 .greeting__container
   height: calc(100% - 53px)
-  //display: flex
-  //flex-direction: column
-  //align-items: center
-  //position: relative
   display: grid
-  grid-template-rows: 50% 27% 23%
+  grid-template-rows: 45% 30% 25%
   justify-items: center
-  //align-items: center
 
 .logo
   align-self: center
+
+  &__icon-logo_small
+    display: none
 
 .title
   display: flex
@@ -60,7 +58,6 @@
     letter-spacing: 1.67px
     text-shadow: 0 0 3px rgba(0, 0, 0, 0.25)
     line-height: 59px
-    //margin-bottom: 72px
 
 .button-go-down
   @include button-default
@@ -87,6 +84,9 @@
   &__icon-arrow-down
     margin-left: 12px
 
+  &__icon-arrow-down_small
+    display: none
+
 .cards
   width: 785px
   display: inline-flex
@@ -98,10 +98,11 @@
     width: 235px
     height: 100%
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.25)
-    display: flex
-    flex-direction: column
+    display: grid
+    grid-template-rows: 100% 49%
+    justify-items: center
     align-items: center
-    //position: relative
+    position: relative
 
   &__item_pink
     background-color: #fe4a5d
@@ -112,23 +113,18 @@
   &__item_orange
     background-color: #ff6c00
 
-  //&__icon-world
-    position: absolute
-    top: calc(50% - 96px)
+  &__icon-world_small
+    display: none
 
-  //&__icon-hearts
-    position: absolute
-    top: calc(50% - 96px)
+  &__icon-hearts_small
+    display: none
 
-  //&__icon-net
-    position: absolute
-    top: calc(50% - 91px)
+  &__icon-net_small
+    display: none
 
   &__title
-    width: 235px
-    height: 110px
-    //position: absolute
-    //bottom: 0
+    width: 100%
+    height: 100%
     display: flex
     flex-direction: column
     justify-content: center
@@ -148,3 +144,138 @@
     text-transform: capitalize
     color: #ffffff
     font-size: 32px
+
+@media(min-width: 992px) and (max-width: 1199px)
+  .greeting
+    background-position-x: -253px
+
+  .button-menu
+    width: 77px
+
+  .title__main-heading
+    font-size: 60px
+
+  .button-go-down
+    width: 175px
+    height: 60px
+
+    &__text
+      width: 150px
+      height: 40px
+
+  .cards
+    width: 745px
+
+    &__item
+      width: 210px
+
+@media (min-width: 768px) and (max-width: 991px)
+  .greeting
+    background-size: contain
+
+  .header
+    padding: 22px 45px 0
+
+  .greeting__container
+    height: calc(100% - 48px)
+
+  .button-menu
+    width: 70px
+
+  .title__main-heading
+    font-size: 50px
+
+  .button-go-down
+    width: 166px
+    height: 52px
+
+    &__text
+      width: 140px
+      height: 34px
+
+  .cards
+    width: 600px
+
+    &__item
+      width: 180px
+
+@media (min-width: 576px) and (max-width: 767px)
+  .greeting
+    background-size: contain
+
+  .header
+    padding: 20px 20px 0
+
+  .greeting__container
+    height: calc(100% - 46px)
+
+  .button-menu
+    width: 70px
+
+  .logo
+    align-self: end
+
+  .title__main-heading
+    font-size: 40px
+
+  .button-go-down
+    width: 166px
+    height: 52px
+
+    &__text
+      width: 135px
+      height: 32px
+
+  .cards
+    width: 530px
+
+    &__item
+      width: 167px
+
+@media (max-width: 575px)
+  .greeting
+    background-size: contain
+
+  .header
+    padding: 20px 20px 0
+
+  .greeting__container
+    height: calc(100% - 46px)
+
+  .button-menu
+    width: 70px
+
+  .logo
+    align-self: center
+
+    &__icon-logo
+      display: none
+
+    &__icon-logo_small
+      display: inline-block
+
+  .title__main-heading
+    font-size: 21px
+
+  .button-go-down
+    width: 166px
+    height: 52px
+
+    &__text
+      width: 135px
+      height: 32px
+
+    &__icon-arrow-down
+      display: none
+
+    &__icon-arrow-down_small
+      display: inline-block
+
+  .cards
+    width: 320px
+
+    &__item
+      width: 114px
+
+    &__text
+      font-size: 21px
