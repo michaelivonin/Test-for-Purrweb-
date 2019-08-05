@@ -1,0 +1,53 @@
+.start
+  background: url(../../images/start-bg.jpg) no-repeat
+  height: 730px
+  position: relative
+
+  &__container
+    height: 100%
+    display: flex
+    justify-content: center
+    align-items: center
+
+  &__main-item-wrapper
+    display: flex
+    justify-content: center
+    align-items: center
+    width: 462px
+    height: 462px
+    border: 1px solid rgba(255, 255, 255, 0.4)
+    border-radius: 50%
+
+  &__main-item
+    width: 371px
+    height: 371px
+    border-radius: 50%
+    background-color: #ffffff
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+
+  &__main-item-heading
+    @include text-default
+    color: #67326e
+    font-size: 60px
+    text-transform: uppercase
+
+  &__main-item-description
+    @include text-default
+    color: #67326e
+    font-size: 46px
+    margin: 19px 0 28px 0
+
+  &__main-item-button
+    @include button-default
+    width: 139px
+    height: 39px
+    border-radius: 3px
+    background-color: #e22028
+    background-image: linear-gradient(to right, #e22028 0%, #f9b416 100%)
+    @include text-default
+    color: #ffffff
+    font-size: 16px
+    text-transform: uppercase

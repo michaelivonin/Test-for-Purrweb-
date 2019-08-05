@@ -10,44 +10,31 @@
   <body>
     <!--include pug/svg.pug-->
     <!--include pug/includes/greeting-->
-    <section class="registration">
-      <div class="container registration__container">
-        <h2 class="registration__heading">
-          <div class="icon icon-heart registration__icon-heart"></div><span class="registration__text-heading">Welcome!</span>
-        </h2>
-        <!-- /.registration__heading-->
-        <blockquote class="registration__title">
-          <p class="registration__text-title">“Love is a promise, love is a souvenir, once given never forgotten,<br>never let it disappear.”</p>
-          <!-- /.registration__text-title-->
-          <cite class="registration__author">- John Lennon</cite>
-        </blockquote>
-        <!-- /.registration__title-->
-        <form class="registration__form" id="registration">
-          <h3 class="registration__form-heading">It's free to join</h3>
-          <fieldset class="profile registration__profile" form="registration">
-            <div class="profile__wrapper">
-              <button class="profile__button-facebook">
-                <div class="icon icon-btn-facebook button-facebook__icon-btn-facebook"></div><span class="button-facebook__text">Sign up with Facebook</span>
-              </button>
-              <!-- /.profile__button-facebook-->
-              <div class="profile__line"><span class="profile__text-line">Or</span></div>
-              <!-- /.profile__line-->
-              <input class="profile__item profile__email" type="email" placeholder="Email">
-              <input class="profile__item profile__name" type="text" placeholder="Username">
-              <input class="profile__item profile__password" type="password" placeholder="Password">
-              <input class="profile__item profile__password-again" type="password" placeholder="Confirm Password">
-              <input class="profile__send" type="submit" value="Let’s go!">
-            </div>
-            <!-- /.profile__wrapper-->
-          </fieldset>
-          <!-- /.profile.registration__profile-->
-        </form>
-        <!-- /.registration__form-->
+    <!--include pug/includes/registration-->
+    <section class="start">
+      <div class="start__main-item-wrapper">
+        <div class="start__main-item">
+          <h4 class="start__main-item-heading">Join now</h4>
+          <p class="start__main-item-description">It's free!</p>
+          <button class="start__main-item-button">Get started</button>
+        </div>
+        <!-- /.start__main-item-->
       </div>
-      <!-- /.container.registration_container-->
+      <!-- /.start__main-item-wrapper-->
+      <div class="container start__container">
+        <div class="start__main-item-wrapper">
+          <div class="start__main-item">
+            <h4 class="start__main-item-heading">Join now</h4>
+            <p class="start__main-item-description">It's free!</p>
+            <button class="start__main-item-button">Get started</button>
+          </div>
+          <!-- /.start__main-item-->
+        </div>
+        <!-- /.start__main-item-wrapper-->
+      </div>
+      <!-- /.container.start__container-->
     </section>
-    <!-- /.registration-->
-    <!--include pug/includes/start-->
+    <!-- /.start-->
     <!--include pug/includes/footer-->
   </body>
 </html>
