@@ -1,0 +1,35 @@
+section.registration
+  .container.registration__container
+    h2.registration__heading
+      .icon.icon-heart.registration__icon-heart
+      span.registration__text-heading Welcome!
+    // /.registration__heading
+    blockquote.registration__title
+      p.registration__text-title
+        | “Love is a promise, love is a souvenir, once given never forgotten,
+        br
+        | never let it disappear.”
+      // /.registration__text-title
+      cite.registration__author - John Lennon
+    // /.registration__title
+    form.registration__form(id="registration")
+      h3.registration__form-heading It's free to join
+      fieldset.profile.registration__profile(form="registration")
+        .profile__wrapper
+          button.profile__button-facebook
+            .icon.icon-btn-facebook.button-facebook__icon-btn-facebook
+            span.button-facebook__text Sign up with Facebook
+          // /.profile__button-facebook
+          .profile__line
+            span.profile__text-line Or
+          // /.profile__line
+          input.profile__item.profile__email(type="email" placeholder="Email")
+          input.profile__item.profile__name(type="text" placeholder="Username")
+          input.profile__item.profile__password(type="password" placeholder="Password")
+          input.profile__item.profile__password-again(type="password" placeholder="Confirm Password")
+          input.profile__send(type="submit" value="Let’s go!")
+        // /.profile__wrapper
+      // /.profile.registration__profile
+    // /.registration__form
+  // /.container.registration_container
+// /.registration
