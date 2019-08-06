@@ -1,7 +1,8 @@
 .start
   background: url(../../images/start-bg.jpg) no-repeat
+  background-position: center
+  background-size: cover
   height: 730px
-  position: relative
 
   &__container
     height: 100%
@@ -51,3 +52,29 @@
     color: #ffffff
     font-size: 16px
     text-transform: uppercase
+
+@media (max-width: 575px)
+  .start
+    height: 640px
+
+    &__container
+      padding: 0 15px
+
+    &__main-item-wrapper
+      width: 100%
+      height: calc(100vw - 30px)
+
+    &__main-item
+      width: 80%
+      height: calc(81vw - 30px)
+
+    &__main-item-heading
+      font-size: 36px
+
+    &__main-item-description
+      font-size: 28px
+
+    &__main-item-button
+      width: 120px
+      height: 29px
+      font-size: 14px
