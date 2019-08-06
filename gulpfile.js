@@ -9,10 +9,6 @@ const gulp = require('gulp'),
   imagemin = require('gulp-imagemin'),
   pngquant = require('imagemin-pngquant'),
   spritesmith = require("gulp.spritesmith"),
-  /*svgstore = require('gulp-svgstore'),
-  svgmin = require('gulp-svgmin'),
-  inject = require('gulp-inject'),
-  rename = require('gulp-rename'),*/
   plumber = require('gulp-plumber'),
   notify = require("gulp-notify"),
   browserSync = require('browser-sync').create();
@@ -29,7 +25,6 @@ let path = {
     style: 'src/sass/main.sass',
     img: 'src/images/**/*.*',
     pngSprite: 'src/sprite/png/',
-    svgSprite: 'src/sprite/svg/**/*.svg',
     fonts: 'src/fonts/**/*.*'
   },
   watch: {
@@ -37,7 +32,6 @@ let path = {
     style: 'src/sass/**/*.*',
     img: 'src/images/**/*.*',
     pngSprite: 'src/sprite/png/*.png',
-    svgSprite: 'src/sprite/svg/**/*.svg',
     fonts: 'src/fonts/**/*.*'
   }
 };
@@ -122,29 +116,12 @@ gulp.task('png-sprite', (done) => {
   done();
 });
 
-// SVG Sprites
-/*gulp.task('svg-sprite', () => {
-  let svgs = gulp.src(path.src.svgSprite)
-    .pipe(rename({prefix: 'svg-icon-'}))
-    .pipe(svgmin())
-    .pipe(svgstore({ inlineSvg: true }));
-
-  function fileContents (filePath, file) {
-    return file.contents.toString();
-  }
-
-  return gulp.src('src/pug/svg.pug')
-    .pipe(inject(svgs, { transform: fileContents }))
-    .pipe(gulp.dest('src/pug'));
-});*/
-
 gulp.task('build', gulp.series(
   'html:build',
   'style:build',
   'fonts:build',
   'image:build',
   'png-sprite'
-  /*'svg-sprite'*/
 ));
 
 gulp.task('watch', (done) => {
@@ -152,7 +129,6 @@ gulp.task('watch', (done) => {
   gulp.watch(path.watch.style, gulp.series('style:build'));
   gulp.watch(path.watch.img, gulp.series('image:build'));
   gulp.watch(path.watch.pngSprite, gulp.series('png-sprite'));
-  //gulp.watch(path.watch.svgSprite, gulp.series('svg-sprite'));
   gulp.watch(path.watch.fonts, gulp.series('fonts:build'));
   done();
 });

@@ -8,56 +8,171 @@
     <link rel="stylesheet" href="css/main.css">
   </head>
   <body>
-    <!--include pug/svg.pug-->
-    <!--include pug/includes/greeting-->
-    <!--include pug/includes/registration-->
-    <!--include pug/includes/start-->
+    <div class="greeting">
+      <div class="header">
+        <button class="header__button-menu button-menu" type="button" title="Мenu"><span class="button-menu__text">Menu</span>
+          <div class="button-menu__bars"><span class="button-menu__bar"></span><span class="button-menu__bar button-menu__bar_with-margins"></span><span class="button-menu__bar"></span></div>
+        </button>
+        <!-- /.header__button-menu.button-menu-->
+      </div>
+      <!-- /.header-->
+      <div class="container greeting__container"><a class="logo" href="#" title="url.com">
+          <div class="icon icon-logo logo__icon-logo"></div>
+          <div class="icon icon-logo_small logo__icon-logo_small"></div></a>
+        <!-- /.logo-->
+        <div class="title">
+          <h1 class="title__main-heading">Find someone to click with</h1>
+          <button class="title__button-go-down button-go-down"><span class="button-go-down__text">Get started
+              <div class="icon icon-arrow-down button-go-down__icon-arrow-down"></div>
+              <div class="icon icon-arrow-down_small button-go-down__icon-arrow-down_small"></div></span>
+            <!-- /.button-go-down__text-->
+          </button>
+          <!-- /.title__button-go-down.button-go-down-->
+        </div>
+        <!-- /.title-->
+        <div class="cards">
+          <div class="cards__item cards__item_pink">
+            <div class="icon icon-world cards__icon-world"></div>
+            <div class="icon icon-world_small cards__icon-world_small"></div>
+            <div class="cards__title cards__title_pink">
+              <p class="cards__text">One world</p>
+            </div>
+            <!-- /.cards__title-->
+          </div>
+          <!-- /.cards__item-->
+          <div class="cards__item cards__item_red">
+            <div class="icon icon-two-hearts cards__icon-two-hearts"></div>
+            <div class="icon icon-two-hearts_small cards__icon-two-hearts_small"></div>
+            <div class="cards__title cards__title_red">
+              <p class="cards__text">Two hearts</p>
+            </div>
+            <!-- /.cards__title-->
+          </div>
+          <!-- /.cards__item-->
+          <div class="cards__item cards__item_orange">
+            <div class="icon icon-net cards__icon-net"></div>
+            <div class="icon icon-net_small cards__icon-net_small"></div>
+            <div class="cards__title cards__title_orange">
+              <p class="cards__text">One site</p>
+            </div>
+            <!-- /.cards__title-->
+          </div>
+          <!-- /.cards__item-->
+        </div>
+        <!-- /.cards-->
+      </div>
+      <!-- /.container.greeting__container-->
+    </div>
+    <!-- /.greeting-->
+    <section class="registration">
+      <div class="container registration__container">
+        <h2 class="registration__heading">
+          <div class="icon icon-heart registration__icon-heart"></div><span class="registration__text-heading">Welcome!</span>
+        </h2>
+        <!-- /.registration__heading-->
+        <blockquote class="registration__title">
+          <p class="registration__text-title">“Love is a promise, love is a souvenir, once given never forgotten,<br>never let it disappear.”</p>
+          <!-- /.registration__text-title-->
+          <cite class="registration__author">- John Lennon</cite>
+        </blockquote>
+        <!-- /.registration__title-->
+        <form class="registration__form" id="registration">
+          <h3 class="registration__form-heading">It's free to join</h3>
+          <fieldset class="profile registration__profile" form="registration">
+            <div class="profile__wrapper">
+              <button class="profile__button-facebook">
+                <div class="icon icon-btn-facebook button-facebook__icon-btn-facebook"></div><span class="button-facebook__text">Sign up with Facebook</span>
+              </button>
+              <!-- /.profile__button-facebook-->
+              <div class="profile__line"><span class="profile__text-line">Or</span></div>
+              <!-- /.profile__line-->
+              <input class="profile__item profile__email" type="email" placeholder="Email">
+              <input class="profile__item profile__name" type="text" placeholder="Username">
+              <input class="profile__item profile__password" type="password" placeholder="Password">
+              <input class="profile__item profile__password-again" type="password" placeholder="Confirm Password">
+              <input class="profile__send" type="submit" value="Let’s go!">
+            </div>
+            <!-- /.profile__wrapper-->
+          </fieldset>
+          <!-- /.profile.registration__profile-->
+        </form>
+        <!-- /.registration__form-->
+      </div>
+      <!-- /.container.registration_container-->
+    </section>
+    <!-- /.registration-->
+    <section class="start">
+      <div class="container start__container">
+        <div class="start__main-item-wrapper">
+          <div class="start__main-item">
+            <h4 class="start__main-item-heading">Join now</h4>
+            <p class="start__main-item-description">It's free!</p>
+            <button class="start__main-item-button">Get started</button>
+          </div>
+          <!-- /.start__main-item-->
+        </div>
+        <!-- /.start__main-item-wrapper-->
+      </div>
+      <!-- /.container.start__container-->
+    </section>
+    <!-- /.start-->
     <footer class="footer">
       <div class="footer__top">
-        <label class="footer__description" for="email">Sign up for our newsletter</label>
-        <input class="footer__email" type="email" id="email" placeholder="Email address">
-        <input class="footer__send" type="submit" value="Subscribe">
+        <div class="container footer__top-container">
+          <label class="footer__description" for="email">Sign up for our newsletter</label>
+          <input class="footer__email" type="email" id="email" placeholder="Email address">
+          <input class="footer__send" type="submit" value="Subscribe">
+        </div>
+        <!-- /.container.footer__top-container-->
       </div>
       <!-- /.footer__top-->
-      <div class="footer__middle"><a class="footer__link" href="#" title="url">About</a><a class="footer__link" href="#" title="url">Contact</a><a class="footer__link" href="#" title="url">FAQs</a><a class="footer__link" href="#" title="url">Blog</a><a class="footer__link" href="#" title="url">Online Safety</a><a class="footer__link" href="#" title="url">Privacy Policy</a><a class="footer__link" href="#" title="url">Terms of Use</a></div>
+      <div class="footer__middle">
+        <div class="container footer__middle-container"><a class="footer__link" href="#" title="url">About</a><a class="footer__link" href="#" title="url">Contact</a><a class="footer__link" href="#" title="url">FAQs</a><a class="footer__link" href="#" title="url">Blog</a><a class="footer__link" href="#" title="url">Online Safety</a><a class="footer__link" href="#" title="url">Privacy Policy</a><a class="footer__link" href="#" title="url">Terms of Use</a></div>
+        <!-- /.container.footer__middle-container-->
+      </div>
       <!-- /.footer__middle-->
       <div class="footer__bottom">
-        <div class="footer__flags">
-          <div class="icon icon-flag-CZ footer__icon-flag-CZ"></div>
-          <div class="icon icon-flag-GR footer__icon-flag-GR"></div>
-          <div class="icon icon-flag-GB footer__icon-flag-GB"></div>
-          <div class="icon icon-flag-TW footer__icon-flag-TW"></div>
-          <div class="icon icon-flag-JP footer__icon-flag-JP"></div>
-          <div class="icon icon-flag-BA footer__icon-flag-BA"></div>
-          <div class="icon icon-flag-DE footer__icon-flag-DE"></div>
-          <div class="icon icon-flag-IT footer__icon-flag-IT"></div>
-          <div class="icon icon-flag-NL footer__icon-flag-NL"></div>
-          <div class="icon icon-flag-CN footer__icon-flag-CN"></div>
-          <div class="icon icon-flag-PA footer__icon-flag-PA"></div>
-          <div class="icon icon-flag-FR footer__icon-flag-FR"></div>
-          <div class="icon icon-flag-SL footer__icon-flag-SL"></div>
-          <div class="icon icon-flag-ES footer__icon-flag-ES"></div>
-          <div class="icon icon-flag-KR footer__icon-flag-KR"></div>
-          <div class="icon icon-flag-PT footer__icon-flag-PT"></div>
-          <div class="icon icon-flag-NO footer__icon-flag-NO"></div>
-          <div class="icon icon-flag-RU footer__icon-flag-RU"></div>
-          <div class="icon icon-flag-PL footer__icon-flag-PL"></div>
-          <div class="icon icon-flag-SE footer__icon-flag-SE"></div>
-          <div class="icon icon-flag-RO footer__icon-flag-RO"></div>
-          <div class="icon icon-flag-DK footer__icon-flag-DK"></div>
-          <div class="icon icon-flag-TR footer__icon-flag-TR"></div>
-          <div class="icon icon-flag-SK footer__icon-flag-SK"></div>
-          <div class="icon icon-flag-VN footer__icon-flag-VN"></div>
-          <div class="icon icon-flag-HR footer__icon-flag-HR"></div>
-          <div class="icon icon-flag-TH footer__icon-flag-TH"></div>
+        <div class="container footer__bottom-container">
+          <div class="footer__flags">
+            <div class="icon icon-flag-CZ footer__icon-flag-CZ"></div>
+            <div class="icon icon-flag-GR footer__icon-flag-GR"></div>
+            <div class="icon icon-flag-GB footer__icon-flag-GB"></div>
+            <div class="icon icon-flag-TW footer__icon-flag-TW"></div>
+            <div class="icon icon-flag-JP footer__icon-flag-JP"></div>
+            <div class="icon icon-flag-BA footer__icon-flag-BA"></div>
+            <div class="icon icon-flag-DE footer__icon-flag-DE"></div>
+            <div class="icon icon-flag-IT footer__icon-flag-IT"></div>
+            <div class="icon icon-flag-NL footer__icon-flag-NL"></div>
+            <div class="icon icon-flag-CN footer__icon-flag-CN"></div>
+            <div class="icon icon-flag-PA footer__icon-flag-PA"></div>
+            <div class="icon icon-flag-FR footer__icon-flag-FR"></div>
+            <div class="icon icon-flag-SL footer__icon-flag-SL"></div>
+            <div class="icon icon-flag-ES footer__icon-flag-ES"></div>
+            <div class="icon icon-flag-KR footer__icon-flag-KR"></div>
+            <div class="icon icon-flag-PT footer__icon-flag-PT"></div>
+            <div class="icon icon-flag-NO footer__icon-flag-NO"></div>
+            <div class="icon icon-flag-RU footer__icon-flag-RU"></div>
+            <div class="icon icon-flag-PL footer__icon-flag-PL"></div>
+            <div class="icon icon-flag-SE footer__icon-flag-SE"></div>
+            <div class="icon icon-flag-RO footer__icon-flag-RO"></div>
+            <div class="icon icon-flag-DK footer__icon-flag-DK"></div>
+            <div class="icon icon-flag-TR footer__icon-flag-TR"></div>
+            <div class="icon icon-flag-SK footer__icon-flag-SK"></div>
+            <div class="icon icon-flag-VN footer__icon-flag-VN"></div>
+            <div class="icon icon-flag-HR footer__icon-flag-HR"></div>
+            <div class="icon icon-flag-TH footer__icon-flag-TH"></div>
+          </div>
+          <!-- /.footer__flags-->
+          <hr class="footer__line">
+          <p class="footer__info">© 2017 All World Dating Enterprise Company LLC. All rights reserved. We pledge never to share or sell your Email Address.</p>
+          <!-- /.footer__info-->
         </div>
-        <!-- /.footer__flags-->
-        <hr class="footer__line">
-        <p class="footer__info">© 2017 All World Dating Enterprise Company LLC. All rights reserved. We pledge never to share or sell your Email Address.</p>
-        <!-- /.footer__info-->
+        <!-- /.container.footer__bottom-container-->
       </div>
       <!-- /.footer__bottom-->
     </footer>
     <!-- /.footer-->
+    <aside class="socials"><a class="icon icon-share" href="#" title="url"></a><a class="icon icon-facebook" href="#" title="url"></a><a class="icon icon-instagram" href="#" title="url"></a><a class="icon icon-twitter" href="#" title="url"></a></aside>
+    <!-- /.socials-->
   </body>
 </html>

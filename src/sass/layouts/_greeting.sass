@@ -3,7 +3,7 @@
   background: url(../../images/greeting-bg.jpg) no-repeat
   background-size: cover
   @media (device-width: 1366px) and (device-height: 1024px) and (orientation: landscape)
-    background-position-x: -191px
+    background-size: contain
 
 .header
   padding: 27px 66px 0
@@ -17,6 +17,14 @@
   display: flex
   justify-content: space-between
   align-items: center
+  &:hover
+    opacity: 0.7
+    cursor: pointer
+  &:active
+    box-shadow: none
+    position: relative
+    top: 2px
+    margin-right: -1px
 
   &__text
     @include text-default
@@ -149,12 +157,7 @@
 
 @media (min-width: 992px) and (max-width: 1199px)
   .greeting
-    background-position-x: -209px
-    @media (device-width: 1024px) and (device-height: 768px) and (orientation: landscape)
-      background-position-x: -152px
-    @media (device-width: 1024px) and (device-height: 1366px) and (orientation: portrait)
-      background-position-x: inherit
-      background-size: contain
+    background-size: contain
 
   .button-menu
     width: 77px
@@ -300,7 +303,7 @@
     &__icon-net_small
       display: inline-block
 
-@media (max-device-width: 823px) and (max-device-height: 414px) and (orientation: landscape)
+@media (max-device-width: 857px) and (max-device-height: 425px) and (orientation: landscape)
   .greeting
     background-size: cover
 
