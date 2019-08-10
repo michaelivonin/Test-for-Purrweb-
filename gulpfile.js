@@ -18,21 +18,24 @@ let path = {
     html: 'build/',
     css: 'build/css/',
     img: 'build/images/',
-    fonts: 'build/fonts/'
+    fonts: 'build/fonts/',
+    favicon: 'build/'
   },
   src: {
     pug: 'src/*.pug',
     style: 'src/sass/main.sass',
     img: 'src/images/**/*.*',
     pngSprite: 'src/sprite/png/',
-    fonts: 'src/fonts/**/*.*'
+    fonts: 'src/fonts/**/*.*',
+    favicon: 'src/*.ico'
   },
   watch: {
     pug: 'src/**/*.pug',
     style: 'src/sass/**/*.*',
     img: 'src/images/**/*.*',
     pngSprite: 'src/sprite/png/*.png',
-    fonts: 'src/fonts/**/*.*'
+    fonts: 'src/fonts/**/*.*',
+    favicon: 'src/*.ico'
   }
 };
 
@@ -116,12 +119,19 @@ gulp.task('png-sprite', (done) => {
   done();
 });
 
+gulp.task('favicon:build', (done) => {
+  gulp.src(path.src.favicon)
+    .pipe(gulp.dest(path.build.favicon));
+  done();
+});
+
 gulp.task('build', gulp.series(
   'html:build',
   'style:build',
   'fonts:build',
   'image:build',
-  'png-sprite'
+  'png-sprite',
+  'favicon:build'
 ));
 
 gulp.task('watch', (done) => {
@@ -130,6 +140,7 @@ gulp.task('watch', (done) => {
   gulp.watch(path.watch.img, gulp.series('image:build'));
   gulp.watch(path.watch.pngSprite, gulp.series('png-sprite'));
   gulp.watch(path.watch.fonts, gulp.series('fonts:build'));
+  gulp.watch(path.watch.favicon, gulp.series('favicon:build'));
   done();
 });
 
